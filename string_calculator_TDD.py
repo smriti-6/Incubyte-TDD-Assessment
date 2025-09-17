@@ -11,8 +11,21 @@ def add(numbers: str) -> int:  # Implementation: input is a string and output is
 
     if delimiter not in numbers:
       return int(numbers)
-
     total = 0
+    negatives = []   
+    for num in numbers.split(delimiter):
+        if num:
+            n = int(num)
+            if n < 0:
+                negatives.append(str(n))
+            total += n
+
+    if negatives:   
+        raise Exception("negative numbers not allowed " + ",".join(negatives))
+
+    return total
+    total = 0
+    
     for num in numbers.split(delimiter):
         if num:
             total+=int(num)
