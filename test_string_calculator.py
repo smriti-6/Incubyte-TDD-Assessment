@@ -7,3 +7,5 @@ class TestStringCalculator(unittest.TestCase):
         self.assertEqual(add("5"),5) 
     def test_two_numbers_sum(self):
         self.assertEqual(add("1,2"),3)      
+    def test_newline_delimiter(self):
+        self.assertEqual(add("1,\n2,3"),6)
